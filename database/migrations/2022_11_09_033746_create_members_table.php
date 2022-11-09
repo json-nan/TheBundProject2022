@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('portfolio_id')->constrained();
+
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('description');
-            $table->string('banner_image');
             $table->string('logo_image');
-            $table->string('background_image');
-            $table->string('background_color', 7);
-            $table->tinyInteger('background_color_opacity');
-            $table->year('year');
-
+            $table->string('profile_image');
+            $table->string('external_portfolio_url')->nullable();
+            $table->string('portfolio_url')->nullable();
+            
             $table->timestamps();
             $table->softDeletes();
         });
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portfolios');
+        Schema::dropIfExists('members');
     }
 };
