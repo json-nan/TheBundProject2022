@@ -22,8 +22,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('logo_image');
             $table->string('profile_image');
-            $table->string('external_portfolio_url')->nullable();
-            $table->string('portfolio_url')->nullable();
+            $table->string('portfolio_url');
             
             $table->timestamps();
             $table->softDeletes();

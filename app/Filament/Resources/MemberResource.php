@@ -44,16 +44,25 @@ class MemberResource extends Resource
                 Forms\Components\FileUpload::make('profile_image')
                     ->required()
                     ->disablePreview(),
-                Forms\Components\TextInput::make('external_portfolio_url')
-                    ->maxLength(255)
+                Forms\Components\Select::make('portfolio_type')
+                    ->required()
+                    ->options([
+                        'external' => 'External',
+                        'internal' => 'Internal',
+                    ])
+                    ->default('external')
                     ->reactive()
-                    ->hidden(fn (Closure $get) => $get('portfolio_url') !== [])
-                    ->required(fn (Closure $get) => $get('portfolio_url') === []),
+                    ->afterStateUpdated(function (Closure $set, $state) {
+                        $set('portfolio_url', null);
+                    }),
+                Forms\Components\TextInput::make('portfolio_url')
+                    ->maxLength(255)
+                    ->required()
+                    ->hidden(fn (Closure $get) => $get('portfolio_type') === 'internal'),
                 Forms\Components\FileUpload::make('portfolio_url')
-                    ->required(fn (Closure $get) => $get('external_portfolio_url') === null ||
-                        $get('external_portfolio_url') === '')
-                    ->hidden(fn (Closure $get) => $get('external_portfolio_url') !== null &&
-                        $get('external_portfolio_url') !== ''),
+                    ->required()
+                    ->hidden(fn (Closure $get) => $get('portfolio_type') === 'external')
+                    ->disablePreview(),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(255),

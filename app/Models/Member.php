@@ -16,7 +16,6 @@ class Member extends Model
         'slug',
         'logo_image',
         'profile_image',
-        'external_portfolio_url',
         'portfolio_url',
         'description',
     ];
