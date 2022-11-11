@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\MemberResource\Pages;
 use App\Filament\Resources\MemberResource\RelationManagers;
+use App\Filament\Resources\MemberResource\RelationManagers\SocialNetworksRelationManager;
 use App\Models\Member;
 use App\Models\SocialNetwork;
 use Closure;
@@ -58,17 +59,6 @@ class MemberResource extends Resource
                     ])
 
                 ]),
-                Card::make()->schema([
-                    Grid::make(2)->schema([
-                        Forms\Components\Select::make('socialNetworks')
-                            ->multiple()
-                            ->relationship('socialNetworks', 'name')
-                            ->preload()
-
-                    ])
-
-                ]),
-
             ]);
     }
 
@@ -101,7 +91,7 @@ class MemberResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            SocialNetworksRelationManager::class,
         ];
     }
 
