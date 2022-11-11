@@ -11,17 +11,24 @@ class Member extends Model
     use HasFactory;
 
     protected $fillable = [
-        'portfolio_id',
+        'generation_id',
         'name',
         'slug',
         'logo_image',
         'profile_image',
-        'portfolio_url',
+        'external_portfolio_url',
+        'local_portfolio_url',
         'description',
     ];
 
-    public function portfolio()
+    public function generation()
     {
-        return $this->belongsTo(Portfolio::class);
+        return $this->belongsTo(Generation::class);
+    }
+
+    public function socialNetworks()
+    {
+        return $this->belongsToMany(SocialNetwork::class)
+            ->withPivot('url');
     }
 }

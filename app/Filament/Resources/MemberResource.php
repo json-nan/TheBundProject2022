@@ -5,8 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\MemberResource\Pages;
 use App\Filament\Resources\MemberResource\RelationManagers;
 use App\Models\Member;
+use App\Models\SocialNetwork;
 use Closure;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -25,47 +28,47 @@ class MemberResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('portfolio_id')
-                    ->relationship('portfolio', 'name')
-                    ->required(),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255)
-                    ->reactive()
-                    ->afterStateUpdated(function (Closure $set, $state) {
-                        $set('slug', Str::slug($state));
-                    }),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('logo_image')
-                    ->required()
-                    ->disablePreview(),
-                Forms\Components\FileUpload::make('profile_image')
-                    ->required()
-                    ->disablePreview(),
-                Forms\Components\Select::make('portfolio_type')
-                    ->required()
-                    ->options([
-                        'external' => 'External',
-                        'internal' => 'Internal',
+                Card::make()->schema([
+                    Grid::make()->columns(2)->schema([
+                        Forms\Components\Select::make('generation_id')
+                            ->relationship('generation', 'name')
+                            ->required(),
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255)
+                            ->reactive()
+                            ->afterStateUpdated(function (Closure $set, $state) {
+                                $set('slug', Str::slug($state));
+                            }),
+                        Forms\Components\TextInput::make('slug')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\FileUpload::make('logo_image')
+                            ->required()
+                            ->disablePreview(),
+                        Forms\Components\FileUpload::make('profile_image')
+                            ->required()
+                            ->disablePreview(),
+                        Forms\Components\TextInput::make('external_portfolio_url')
+                            ->maxLength(255),
+                        Forms\Components\FileUpload::make('local_portfolio_url'),
+                        Forms\Components\Textarea::make('description')
+                            ->required()
+                            ->maxLength(255),
                     ])
-                    ->default('external')
-                    ->reactive()
-                    ->afterStateUpdated(function (Closure $set, $state) {
-                        $set('portfolio_url', null);
-                    }),
-                Forms\Components\TextInput::make('portfolio_url')
-                    ->maxLength(255)
-                    ->required()
-                    ->hidden(fn (Closure $get) => $get('portfolio_type') === 'internal'),
-                Forms\Components\FileUpload::make('portfolio_url')
-                    ->required()
-                    ->hidden(fn (Closure $get) => $get('portfolio_type') === 'external')
-                    ->disablePreview(),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->maxLength(255),
+
+                ]),
+                Card::make()->schema([
+                    Grid::make(2)->schema([
+                        Forms\Components\Select::make('socialNetworks')
+                            ->multiple()
+                            ->relationship('socialNetworks', 'name')
+                            ->preload()
+
+                    ])
+
+                ]),
+
             ]);
     }
 
@@ -73,13 +76,10 @@ class MemberResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('portfolio_id'),
+                Tables\Columns\TextColumn::make('generation.name'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('logo_image'),
-                Tables\Columns\TextColumn::make('profile_image'),
-                Tables\Columns\TextColumn::make('portfolio_url'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
