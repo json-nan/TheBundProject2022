@@ -56,6 +56,8 @@ class MemberResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\Checkbox::make('is_emblematic')
+                            ->required(),
                     ])
 
                 ]),
