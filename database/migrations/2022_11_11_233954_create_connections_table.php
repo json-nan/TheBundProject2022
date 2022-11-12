@@ -13,22 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('connections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('generation_id')->constrained();
 
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('profession');
             $table->string('description');
-            $table->string('logo_image');
-            $table->string('profile_image');
+            $table->string('contact_number');
+            $table->string('image')->nullable();
+            $table->string('logo')->nullable();
 
-            $table->string('external_portfolio_url')->nullable();
-            $table->string('local_portfolio_url')->nullable();
-
-            $table->boolean('is_emblematic');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -39,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('connections');
     }
 };
