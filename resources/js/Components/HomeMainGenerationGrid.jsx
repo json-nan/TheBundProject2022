@@ -71,7 +71,7 @@ const GenerationMember = ({ member }) => {
   return (
     <div className="overflow-hidden bg-white rounded-md generation-member">
       <div className="generation-member-image">
-        <img src={member.profile_image} />
+        <img src={`/storage/${member.profile_image}`} />
       </div>
     </div>
   );
