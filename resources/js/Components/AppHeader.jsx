@@ -79,16 +79,16 @@ export default function AppHeader({ generations }) {
         <Popover className="relative bg-white">
             <div className="flex items-center justify-between px-4 py-2 sm:px-6 md:justify-start">
                 <div className="-my-2 -mr-2 md:hidden">
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Open menu</span>
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon className="w-6 h-6" aria-hidden="true" />
                     </Popover.Button>
                 </div>
                 <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
-                    <div className="grid grid-cols-3 w-full">
+                    <div className="grid w-full grid-cols-3">
                         <Popover.Group
                             as="nav"
-                            className="flex space-x-10 col-span-1"
+                            className="flex col-span-1 space-x-10"
                         >
                             <Popover className="relative">
                                 {({ open }) => (
@@ -101,7 +101,7 @@ export default function AppHeader({ generations }) {
                                                 "h-full group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             )}
                                         >
-                                            <Bars3Icon className="mr-2 h-5 w-5 group-hover:text-gray-500" />
+                                            <Bars3Icon className="w-5 h-5 mr-2 group-hover:text-gray-500" />
                                             <span>Menu</span>
                                         </Popover.Button>
 
@@ -114,12 +114,12 @@ export default function AppHeader({ generations }) {
                                             leaveFrom="opacity-100 translate-y-0"
                                             leaveTo="opacity-0 translate-y-1"
                                         >
-                                            <Popover.Panel className="absolute z-10 -ml-6 mt-2 w-screen max-w-md transform ">
-                                                <div className=" shadow-lg">
-                                                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-6 sm:p-8 lg:grid-cols-1 divide-y-4 divide-gray-200">
+                                            <Popover.Panel className="absolute z-10 w-screen max-w-md mt-2 -ml-6 transform ">
+                                                <div className="shadow-lg ">
+                                                    <div className="relative grid gap-6 px-5 py-6 bg-white divide-y-4 divide-gray-200 sm:gap-6 sm:p-8 lg:grid-cols-1">
                                                         <a
                                                             href={"#"}
-                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
                                                                 <p className="text-base font-medium text-gray-900">
@@ -130,8 +130,8 @@ export default function AppHeader({ generations }) {
                                                         </a>
                                                         <HomeMenuDropdown generations={generations} />
                                                         <a
-                                                            href={"#"}
-                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                            href={"#news"}
+                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
                                                                 <p className="text-base font-medium text-gray-900">
@@ -140,8 +140,8 @@ export default function AppHeader({ generations }) {
                                                             </div>
                                                         </a>
                                                         <a
-                                                            href={"#"}
-                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                            href={"/contacts"}
+                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
                                                                 <p className="text-base font-medium text-gray-900">
@@ -152,7 +152,7 @@ export default function AppHeader({ generations }) {
                                                         </a>
                                                         <a
                                                             href={"#"}
-                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
                                                                 <p className="text-base font-medium text-gray-900">
@@ -176,7 +176,7 @@ export default function AppHeader({ generations }) {
                                 alt=""
                             />
                             {/* <img
-                                className="h-8 w-auto sm:h-10"
+                                className="w-auto h-8 sm:h-10"
                                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                                 alt=""
                             /> */}
@@ -197,25 +197,25 @@ export default function AppHeader({ generations }) {
             >
                 <Popover.Panel
                     focus
-                    className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+                    className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden"
                 >
-                    <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                    <div className="bg-white divide-y-2 rounded-lg shadow-lg divide-gray-50 ring-1 ring-black ring-opacity-5">
                         <div className="px-5 pt-5 pb-6">
                             <div className="flex items-center justify-between">
                                 <div>
                                     <img
-                                        className="h-8 w-auto"
+                                        className="w-auto h-8"
                                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                                         alt="Your Company"
                                     />
                                 </div>
                                 <div className="-mr-2">
-                                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                    <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                         <span className="sr-only">
                                             Close menu
                                         </span>
                                         <XMarkIcon
-                                            className="h-6 w-6"
+                                            className="w-6 h-6"
                                             aria-hidden="true"
                                         />
                                     </Popover.Button>
@@ -227,11 +227,11 @@ export default function AppHeader({ generations }) {
                                         <a
                                             key={item.name}
                                             href={item.href}
-                                            className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+                                            className="flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50"
                                         >
-                                            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white">
+                                            <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white bg-indigo-500 rounded-md">
                                                 <item.icon
-                                                    className="h-6 w-6"
+                                                    className="w-6 h-6"
                                                     aria-hidden="true"
                                                 />
                                             </div>
@@ -243,7 +243,7 @@ export default function AppHeader({ generations }) {
                                 </nav>
                             </div>
                         </div>
-                        <div className="py-6 px-5">
+                        <div className="px-5 py-6">
                             <div className="grid grid-cols-2 gap-4">
                                 <a
                                     href="#"
@@ -278,11 +278,11 @@ export default function AppHeader({ generations }) {
                             <div className="mt-6">
                                 <a
                                     href="#"
-                                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                                    className="flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
                                 >
                                     Sign up
                                 </a>
-                                <p className="mt-6 text-center text-base font-medium text-gray-500">
+                                <p className="mt-6 text-base font-medium text-center text-gray-500">
                                     Existing customer?{" "}
                                     <a
                                         href="#"

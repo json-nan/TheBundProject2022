@@ -34,5 +34,5 @@ svg {
 
 * {
     font-family: Gilroy;
-    font-weight: 400;
+    scroll-behavior: smooth;
 }

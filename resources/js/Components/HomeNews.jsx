@@ -11,7 +11,7 @@ const HomeNews = ({ news }) => {
     };
 
     return (
-        <div className="relative bg-[#F0A31F] pb-16">
+        <div className="relative bg-[#F0A31F] pb-16" id="news">
             <div></div>
 
             <div className="w-full py-5 ">

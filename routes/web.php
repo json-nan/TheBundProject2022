@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Connection;
 use App\Models\Generation;
 use App\Models\Notice;
 use Illuminate\Foundation\Application;
@@ -32,6 +33,13 @@ Route::get('/generations/{generation:slug}', function (Generation $generation) {
         'generation' => $generation->load('members.socialNetworks'),
     ]);
 })->name('generation');
+
+Route::get('/connections', function () {
+    return Inertia::render('Connections', [
+        'generations' => Generation::all(),
+        'connections' => Connection::all(),
+    ]);
+})->name('conections');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
