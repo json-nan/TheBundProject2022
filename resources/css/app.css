@@ -10,3 +10,29 @@ svg {
     fill: currentColor !important;
     stroke: currentColor !important;
 }
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 800;
+    src: url("/assets/fonts/Gilroy/Gilroy-ExtraBold.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    src: url("/assets/fonts/Gilroy/Gilroy-Regular.ttf");
+    font-style: normal;
+}
+
+/* @font-face {
+	font-family: 'Gilroy';
+	src: url('../assets/Museo-Sans/MuseoSans_300.otf');
+	font-weight: 300;
+	font-style: normal;
+} */
+
+* {
+    font-family: Gilroy;
+    font-weight: 400;
+}

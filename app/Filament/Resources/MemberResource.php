@@ -55,9 +55,7 @@ class MemberResource extends Resource
                         Forms\Components\FileUpload::make('local_portfolio_url'),
                         Forms\Components\Textarea::make('description')
                             ->required()
-                            ->maxLength(255),
-                        Forms\Components\Checkbox::make('is_emblematic')
-                            ->required(),
+                            ->maxLength(255)
                     ])
 
                 ]),

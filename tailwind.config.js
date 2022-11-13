@@ -10,10 +10,10 @@ module.exports = {
     ],
 
     theme: {
-        
         extend: {
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                sans: ["Gilroy", "Nunito", ...defaultTheme.fontFamily.sans],
+                body: ["Gilroy"],
             },
             colors: {
                 primary: "#383391",

@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Generation;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,16 +19,17 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'generations' => Generation::all(),
+        'members' => Generation::isHomePageGeneration()->first()->members,
     ]);
 });
 
-Route::get('/portfolios/{portfolio}', function () {
-    return Inertia::render('Portfolio');
-})->name('portfolio');
+Route::get('/generations/{generation:slug}', function (Generation $generation) {
+    return Inertia::render('Generation', [
+        'generations' => Generation::all(),
+        'generation' => $generation->load('members.socialNetworks'),
+    ]);
+})->name('generation');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

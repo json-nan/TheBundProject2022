@@ -11,48 +11,37 @@ import {
     XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import HomeMenuDropdown from "./HomeMenuDropdown";
 
-const solutions = [
+const menuItems = [
     {
-        name: "Analytics",
+        name: "Quienes somos?",
         description:
             "Get a better understanding of where your traffic is coming from.",
         href: "#",
-        icon: ChartBarIcon,
     },
     {
-        name: "Engagement",
+        name: "Portafolios",
         description:
             "Speak directly to your customers in a more meaningful way.",
         href: "#",
-        icon: CursorArrowRaysIcon,
     },
     {
-        name: "Security",
+        name: "Noticias",
         description: "Your customers' data will be safe and secure.",
         href: "#",
-        icon: ShieldCheckIcon,
     },
     {
-        name: "Integrations",
+        name: "Catalogo de nexos",
         description:
             "Connect with third-party tools that you're already using.",
         href: "#",
-        icon: Squares2X2Icon,
     },
     {
-        name: "Automations",
+        name: "Diseñadores emblema",
         description:
             "Build strategic funnels that will drive your customers to convert",
         href: "#",
-        icon: ArrowPathIcon,
-    },
-    {
-        name: "Reports",
-        description:
-            "Get detailed reports that will help you make more informed decisions ",
-        href: "#",
-        icon: DocumentChartBarIcon,
     },
 ];
 const resources = [
@@ -85,7 +74,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function AppHeader({ generations }) {
     return (
         <Popover className="relative bg-white">
             <div className="flex items-center justify-between px-4 py-2 sm:px-6 md:justify-start">
@@ -113,7 +102,7 @@ export default function Example() {
                                             )}
                                         >
                                             <Bars3Icon className="mr-2 h-5 w-5 group-hover:text-gray-500" />
-                                            <span>Solutions</span>
+                                            <span>Menu</span>
                                         </Popover.Button>
 
                                         <Transition
@@ -125,63 +114,54 @@ export default function Example() {
                                             leaveFrom="opacity-100 translate-y-0"
                                             leaveTo="opacity-0 translate-y-1"
                                         >
-                                            <Popover.Panel className="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform lg:max-w-3xl">
-                                                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                                                        {/* {solutions.map(
-                                                            (item) => (
-                                                                <a
-                                                                    key={
-                                                                        item.name
-                                                                    }
-                                                                    href={
-                                                                        item.href
-                                                                    }
-                                                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                                                                >
-                                                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                                                        <item.icon
-                                                                            className="h-6 w-6"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    </div>
-                                                                    <div className="ml-4">
-                                                                        <p className="text-base font-medium text-gray-900">
-                                                                            {
-                                                                                item.name
-                                                                            }
-                                                                        </p>
-                                                                        <p className="mt-1 text-sm text-gray-500">
-                                                                            {
-                                                                                item.description
-                                                                            }
-                                                                        </p>
-                                                                    </div>
-                                                                </a>
-                                                            )
-                                                        )} */}
-                                                    </div>
-                                                    {/* <div className="bg-gray-50 p-5 sm:p-8">
+                                            <Popover.Panel className="absolute z-10 -ml-6 mt-2 w-screen max-w-md transform ">
+                                                <div className=" shadow-lg">
+                                                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-6 sm:p-8 lg:grid-cols-1 divide-y-4 divide-gray-200">
                                                         <a
-                                                            href="#"
-                                                            className="-m-3 flow-root rounded-md p-3 hover:bg-gray-100"
+                                                            href={"#"}
+                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
                                                         >
-                                                            <div className="flex items-center">
-                                                                <div className="text-base font-medium text-gray-900">
-                                                                    Enterprise
-                                                                </div>
-                                                                <span className="ml-3 inline-flex items-center rounded-full bg-indigo-100 px-3 py-0.5 text-xs font-medium leading-5 text-indigo-800">
-                                                                    New
-                                                                </span>
+                                                            <div className="ml-4">
+                                                                <p className="text-base font-medium text-gray-900">
+                                                                    Quienes
+                                                                    somos?
+                                                                </p>
                                                             </div>
-                                                            <p className="mt-1 text-sm text-gray-500">
-                                                                Empower your
-                                                                entire team with
-                                                                even more
-                                                                advanced tools.
-                                                            </p>
                                                         </a>
-                                                    </div> */}
+                                                        <HomeMenuDropdown generations={generations} />
+                                                        <a
+                                                            href={"#"}
+                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                        >
+                                                            <div className="ml-4">
+                                                                <p className="text-base font-medium text-gray-900">
+                                                                    Noticias
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <a
+                                                            href={"#"}
+                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                        >
+                                                            <div className="ml-4">
+                                                                <p className="text-base font-medium text-gray-900">
+                                                                    Catalogo de
+                                                                    nexos
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <a
+                                                            href={"#"}
+                                                            className="-m-3 flex items-start p-2 hover:bg-gray-50"
+                                                        >
+                                                            <div className="ml-4">
+                                                                <p className="text-base font-medium text-gray-900">
+                                                                    Diseñadores
+                                                                    emblema
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </Popover.Panel>
                                         </Transition>
@@ -243,7 +223,7 @@ export default function Example() {
                             </div>
                             <div className="mt-6">
                                 <nav className="grid gap-6">
-                                    {solutions.map((item) => (
+                                    {/* {menuItems.map((item) => (
                                         <a
                                             key={item.name}
                                             href={item.href}
@@ -259,7 +239,7 @@ export default function Example() {
                                                 {item.name}
                                             </div>
                                         </a>
-                                    ))}
+                                    ))} */}
                                 </nav>
                             </div>
                         </div>

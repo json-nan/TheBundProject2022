@@ -59,6 +59,8 @@ class GenerationResource extends Resource
                 Forms\Components\FileUpload::make('background_image')
                     ->required()
                     ->disablePreview(),
+                Forms\Components\Toggle::make('home_page_generation')
+                    ->required(),
 
             ]);
     }

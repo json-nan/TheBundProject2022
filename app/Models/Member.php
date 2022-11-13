@@ -19,7 +19,6 @@ class Member extends Model
         'external_portfolio_url',
         'local_portfolio_url',
         'description',
-        'is_emblematic',
     ];
 
     public function generation()

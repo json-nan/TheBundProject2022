@@ -19,5 +19,16 @@ class Generation extends Model
         'background_color',
         'background_color_opacity',
         'background_image',
+        'home_page_generation',
     ];
+
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
+
+    public function scopeIsHomePageGeneration($query)
+    {
+        return $query->where('home_page_generation', true);
+    }
 }

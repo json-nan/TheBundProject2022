@@ -1,3 +1,5 @@
+import { NewsTitleSvg } from "./svg/NewsTittle";
+
 const HomeNews = () => {
     return (
         <div className="bg-secondary relative">
@@ -7,10 +9,7 @@ const HomeNews = () => {
 
             <div className="py-5 absolute top-0 w-full">
                 <div className="flex justify-between">
-                    <img
-                        className="w-1/4"
-                        src="/assets/images/THEBUNDPROJECT-NEXOS2022-NOTICIAS_Mesa de trabajo 1.svg"
-                    />
+                    <NewsTitleSvg className="w-1/4" />
                     <img
                         className="w-36"
                         src="/assets/images/THEBUNDPROJECT-NEXOS2022-NOTICIAS ICONO_Mesa de trabajo 1.svg"

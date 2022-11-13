@@ -23,6 +23,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
+        'has_admin_panel_access'
     ];
 
     /**
@@ -46,6 +47,6 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessFilament(): bool
     {
-        return true;
+        return $this->has_admin_panel_access;
     }
 }
