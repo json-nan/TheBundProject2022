@@ -13,7 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Gilroy", "Nunito", ...defaultTheme.fontFamily.sans],
-                body: ["Gilroy"],
+                gilroy: ["Gilroy"],
             },
             colors: {
                 primary: "#383391",

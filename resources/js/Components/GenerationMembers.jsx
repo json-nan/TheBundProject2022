@@ -10,7 +10,6 @@ const GenerationMembers = (props) => {
     const onMemberOpen = (member) => {
         setMember(member);
         setOpen(true);
-        console.log(member);
     };
     return (
         <div
@@ -89,7 +88,10 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                     <div className="space-y-4">
                         <div className="flex justify-center">
                             {member?.social_networks.map((network, index) => (
-                                <a href={parseUrl(network.pivot.url)}>
+                                <a
+                                    key={network.id}
+                                    href={parseUrl(network.pivot.url)}
+                                >
                                     <img
                                         src={`/storage/${network.icon}`}
                                         className="w-8 text-red-500"

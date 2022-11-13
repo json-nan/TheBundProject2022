@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Generation;
+use App\Models\Notice;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'generations' => Generation::all(),
         'members' => Generation::isHomePageGeneration()->first()->members,
+        'news' => Notice::published()->latest()->take(4)->get(),
     ]);
 });
 
