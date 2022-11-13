@@ -89,7 +89,7 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                     <div className="space-y-4">
                         <div className="flex justify-center">
                             {member?.social_networks.map((network, index) => (
-                                <a href={`${network.pivot.url}`}>
+                                <a href={parseUrl(network.pivot.url)}>
                                     <img
                                         src={`/storage/${network.icon}`}
                                         className="w-8 text-red-500"
@@ -113,3 +113,10 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
 };
 
 export default GenerationMembers;
+
+const parseUrl = (url) => {
+    if (url.startsWith("http")) {
+        return url;
+    }
+    return `http://${url}`;
+};
