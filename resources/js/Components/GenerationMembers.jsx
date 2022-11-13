@@ -98,12 +98,18 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                             ))}
                         </div>
                         <div className="flex justify-center">
-                            <button
+                            <a
+                                target="_blank"
+                                href={
+                                    member?.local_portfolio_url
+                                        ? `/storage/${member?.local_portfolio_url}`
+                                        : member?.external_portfolio_url
+                                }
                                 style={{ backgroundColor: bgColor }}
                                 className="px-2 py-1 text-white"
                             >
                                 Ver portafolio
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
