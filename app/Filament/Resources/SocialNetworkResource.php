@@ -37,7 +37,8 @@ class SocialNetworkResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('icon')
                     ->required()
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('social_networks'),
             ]);
     }
 

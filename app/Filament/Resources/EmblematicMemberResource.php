@@ -35,9 +35,11 @@ class EmblematicMemberResource extends Resource
                     ->maxLength(191),
                 Forms\Components\FileUpload::make('logo')
                     ->required()
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('emblematice_members'),
                 Forms\Components\FileUpload::make('internal_portfolio')
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('emblematice_members'),
                 Forms\Components\TextInput::make('external_portfolio')
                     ->maxLength(191),
                 Forms\Components\Textarea::make('description')

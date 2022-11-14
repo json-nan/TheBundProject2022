@@ -52,13 +52,16 @@ class GenerationResource extends Resource
                     ->default(100),
                 Forms\Components\FileUpload::make('banner_image')
                     ->required()
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('generations'),
                 Forms\Components\FileUpload::make('logo_image')
                     ->required()
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('generations'),
                 Forms\Components\FileUpload::make('background_image')
                     ->required()
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('generations'),
                 Forms\Components\Toggle::make('home_page_generation')
                     ->required(),
 

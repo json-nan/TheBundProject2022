@@ -36,9 +36,11 @@ class ConnectionResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('connections'),
                 Forms\Components\FileUpload::make('logo')
-                    ->disablePreview(),
+                    ->disablePreview()
+                    ->directory('connections')
             ]);
     }
 

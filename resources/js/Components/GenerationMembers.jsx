@@ -22,10 +22,11 @@ const GenerationMembers = (props) => {
             className="py-10 generation-members"
         >
             <div className="max-w-2xl mx-auto space-y-10 2xl:max-w-7xl lg:max-w-4xl">
-                <div className="grid grid-cols-1">
-                    <div>
-                        <img src={`/storage/${generation.logo_image}`} />
-                    </div>
+                <div className="flex justify-center">
+                    <img
+                        src={`/storage/${generation.logo_image}`}
+                        className="max-h-28"
+                    />
                 </div>
                 <div className="grid grid-cols-4 gap-10">
                     {generation.members.map((member, index) => (
@@ -51,7 +52,7 @@ const GenerationMembers = (props) => {
 const Member = ({ member, onMemberOpen }) => {
     return (
         <div
-            className="cursor-pointer member"
+            className="transition duration-300 ease-in-out delay-150 cursor-pointer member hover:-translate-y-1 hover:scale-110"
             onClick={() => onMemberOpen(member)}
         >
             <div className="member-image">
