@@ -1,4 +1,4 @@
-const ContactsSection = ({ connections }) => {
+const ConnectionsSection = ({ connections }) => {
     return (
         <div className="relative contacts-section">
             <div className="relative contacts-section__container">
@@ -63,4 +63,4 @@ const ContactsSection = ({ connections }) => {
     );
 };
 
-export default ContactsSection;
+export default ConnectionsSection;

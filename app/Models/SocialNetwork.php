@@ -20,4 +20,10 @@ class SocialNetwork extends Model
         return $this->belongsToMany(Member::class)
             ->withPivot('url');
     }
+
+    public function emblematicMembers()
+    {
+        return $this->belongsToMany(EmblematicMember::class)
+            ->withPivot('url');
+    }
 }

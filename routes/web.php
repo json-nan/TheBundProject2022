@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Connection;
+use App\Models\EmblematicMember;
 use App\Models\Generation;
 use App\Models\Notice;
 use Illuminate\Foundation\Application;
@@ -40,6 +41,13 @@ Route::get('/connections', function () {
         'connections' => Connection::all(),
     ]);
 })->name('conections');
+
+Route::get('/emblematic-members', function () {
+    return Inertia::render('EmblematicMembers', [
+        'generations' => Generation::all(),
+        'emblematic_members' => EmblematicMember::with('socialNetworks')->get(),
+    ]);
+})->name('emblematic-members');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

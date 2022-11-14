@@ -140,7 +140,7 @@ export default function AppHeader({ generations }) {
                                                             </div>
                                                         </a>
                                                         <a
-                                                            href={"/contacts"}
+                                                            href={"/connections"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
@@ -151,7 +151,7 @@ export default function AppHeader({ generations }) {
                                                             </div>
                                                         </a>
                                                         <a
-                                                            href={"#"}
+                                                            href={"/emblematic-members"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
