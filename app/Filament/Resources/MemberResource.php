@@ -59,7 +59,7 @@ class MemberResource extends Resource
                             ->directory('members'),
                         Forms\Components\Textarea::make('description')
                             ->required()
-                            ->maxLength(255)
+                            ->maxLength(65535)
                     ])
 
                 ]),
