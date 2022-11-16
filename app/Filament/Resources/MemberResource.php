@@ -45,11 +45,9 @@ class MemberResource extends Resource
                             ->required()
                             ->maxLength(255),
                         Forms\Components\FileUpload::make('logo_image')
-                            ->required()
                             ->disablePreview()
                             ->directory('members'),
                         Forms\Components\FileUpload::make('profile_image')
-                            ->required()
                             ->disablePreview()
                             ->directory('members'),
                         Forms\Components\TextInput::make('external_portfolio_url')
@@ -58,7 +56,6 @@ class MemberResource extends Resource
                             ->disablePreview()
                             ->directory('members'),
                         Forms\Components\Textarea::make('description')
-                            ->required()
                             ->maxLength(65535)
                     ])
 
