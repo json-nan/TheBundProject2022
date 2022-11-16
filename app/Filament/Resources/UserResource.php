@@ -35,10 +35,11 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->maxLength(191)
-                    ->dehydrateStateUsing(fn ($state) => Hash::make($state)),
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->hiddenOn('edit'),
                 Forms\Components\Toggle::make('has_admin_panel_access')
                     ->required(),
-                    Forms\Components\Toggle::make('can_user_management')
+                Forms\Components\Toggle::make('can_user_management')
                     ->required(),
             ]);
     }
