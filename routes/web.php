@@ -35,19 +35,19 @@ Route::get('/generations/{generation:slug}', function (Generation $generation) {
     ]);
 })->name('generation');
 
-Route::get('/connections', function () {
-    return Inertia::render('Connections', [
-        'generations' => Generation::all(),
-        'connections' => Connection::all(),
-    ]);
-})->name('conections');
+// Route::get('/connections', function () {
+//     return Inertia::render('Connections', [
+//         'generations' => Generation::all(),
+//         'connections' => Connection::all(),
+//     ]);
+// })->name('conections');
 
-Route::get('/emblematic-members', function () {
-    return Inertia::render('EmblematicMembers', [
-        'generations' => Generation::all(),
-        'emblematic_members' => EmblematicMember::with('socialNetworks')->get(),
-    ]);
-})->name('emblematic-members');
+// Route::get('/emblematic-members', function () {
+//     return Inertia::render('EmblematicMembers', [
+//         'generations' => Generation::all(),
+//         'emblematic_members' => EmblematicMember::with('socialNetworks')->get(),
+//     ]);
+// })->name('emblematic-members');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

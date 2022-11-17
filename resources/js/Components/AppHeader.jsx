@@ -118,7 +118,7 @@ export default function AppHeader({ generations }) {
                                                 <div className="shadow-lg ">
                                                     <div className="relative grid gap-6 px-5 py-6 bg-white divide-y-4 divide-gray-200 sm:gap-6 sm:p-8 lg:grid-cols-1">
                                                         <a
-                                                            href={"#"}
+                                                            href={"/"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
                                                             <div className="ml-4">
@@ -139,7 +139,7 @@ export default function AppHeader({ generations }) {
                                                                 </p>
                                                             </div>
                                                         </a>
-                                                        <a
+                                                        {/* <a
                                                             href={"/connections"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50"
                                                         >
@@ -160,7 +160,7 @@ export default function AppHeader({ generations }) {
                                                                     emblema
                                                                 </p>
                                                             </div>
-                                                        </a>
+                                                        </a> */}
                                                     </div>
                                                 </div>
                                             </Popover.Panel>

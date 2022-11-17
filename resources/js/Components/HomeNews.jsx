@@ -71,7 +71,7 @@ const HomeNewsItem = ({ notice, onNoticeOpen }) => {
 const NoticeModal = ({ notice, open, onClose }) => {
     return (
         <Modal open={open} onClose={onClose} bgColor="#F0A31F">
-            <div className="flex flex-col">
+            <div className="flex flex-col p-6">
                 <div className="w-full h-96">
                     <img src={`/storage/${notice?.image}`} alt="" />
                 </div>
