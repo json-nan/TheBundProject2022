@@ -42,15 +42,15 @@ const GenerationMembers = (props) => {
                 className="flex flex-wrap items-center content-center justify-center mt-10 bg-white place-content-center justify-items-center "
                 style={{ backgroundColor: generation.background_color }}
             >
-                <img
+                {/* <img
                     src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOUDB_Mesa de trabajo 1.svg"
                     className="w-20 h-20"
-                />
+                /> */}
                 {sponsors.map((sponsor, index) => (
                     <img
                         key={sponsor.id}
                         src={`/storage/${sponsor.image}`}
-                        className="w-20 h-20"
+                        className="w-20"
                     />
                 ))}
                 {/* {generation.phrase} */}
