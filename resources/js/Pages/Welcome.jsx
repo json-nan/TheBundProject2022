@@ -26,21 +26,24 @@ const HomePageHeader = ({ social_networks }) => {
     return (
         <div>
             <div className="bg-[#F0A31F] h-16 font-bold flex justify-center items-center">
-                <img src="/assets/images/NEXOS2022-DISEÑO-INDUSTRIAL-EL SALVADOR_Mesa de trabajo 1.svg" className="w-96" />
+                <img
+                    src="/assets/images/NEXOS2022-DISEÑO-INDUSTRIAL-EL SALVADOR_Mesa de trabajo 1.svg"
+                    className="w-96"
+                />
                 {/* <p>#It's time, to make NEXOS</p> */}
             </div>
-            <div className="grid h-16 grid-cols-5 border border-b-gray-400">
+            <div className="grid grid-cols-1 space-y-4 border lg:h-16 lg:grid-cols-5 border-b-gray-400 lg:space-y-0">
                 <div className="col-span-1"></div>
 
-                <div className="col-span-3">
-                    <div className="flex items-center justify-center h-full">
+                <div className="col-span-1 lg:col-span-3">
+                    <div className="flex items-center justify-center h-full text-center">
                         <p>
                             Mentes creativas reunidad para formar parte de un
                             colectivo nuevo e innovador
                         </p>
                     </div>
                 </div>
-                <div className="flex items-center col-span-1 gap-4">
+                <div className="flex items-center justify-center col-span-1 gap-4">
                     <div>
                         <button
                             type="button"

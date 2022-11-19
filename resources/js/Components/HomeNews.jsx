@@ -14,17 +14,17 @@ const HomeNews = ({ news }) => {
         <div className="relative bg-[#F0A31F] pb-16" id="news">
             <div></div>
 
-            <div className="w-full py-5 ">
-                <div className="flex justify-between">
+            <div className="w-full lg:py-5 ">
+                <div className="flex justify-between py-5">
                     <NewsTitleSvg className="w-1/4" />
                     <img
-                        className="w-36"
+                        className="absolute top-0 right-0 w-16 lg:w-36"
                         src="/assets/images/THEBUNDPROJECT-NEXOS2022-NOTICIAS ICONO_Mesa de trabajo 1.svg"
                     />
                 </div>
 
-                <div className="flex justify-between max-w-4xl mx-auto">
-                    <div className="grid w-full grid-cols-2 gap-20">
+                <div className="flex justify-between max-w-4xl px-6 mx-auto lg:px-0">
+                    <div className="grid w-full grid-cols-1 gap-20 lg:grid-cols-2">
                         {news.map((notice, index) => {
                             return (
                                 <div

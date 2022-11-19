@@ -13,10 +13,10 @@ const HomeMainGenerationGrid = ({ members }) => (
             className="absolute bottom-0 right-0 2xl:w-96 w-72 2xl:bottom-16 lg:w-60 lg:bottom-20"
         />
 
-        <div className="relative top-0 z-10 w-full py-10">
+        <div className="relative top-0 z-10 w-full px-6 py-10 lg:px-0">
             <div className="max-w-2xl mx-auto space-y-10 2xl:max-w-7xl lg:max-w-4xl">
-                <div className="grid grid-cols-2">
-                    <div className="col-span-1">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="flex items-center justify-center col-span-1">
                         <img
                             className="w-2/3"
                             src="/assets/images/THEBUNDPROJECT-NEXOS2022-FONDOBLANCO ID_Mesa de trabajo 1.svg"
@@ -33,7 +33,7 @@ const HomeMainGenerationGrid = ({ members }) => (
                     </div>
                 </div>
 
-                <div className="grid grid-cols-7 gap-6">
+                <div className="grid grid-cols-3 gap-6 lg:grid-cols-7">
                     {members.map((member, index) => {
                         return (
                             <div key={`item-${index}`} className="col-span-1">
