@@ -2,10 +2,13 @@ import InstagramIcon from "@/icons/InstagramIcon";
 import LinkedinIcon from "@/icons/LinkedinIcon";
 import TikTokIcon from "@/icons/TikTokIcon";
 
-const AppFooter = () => {
+const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
     return (
         <footer>
-            <div className="bg-black text-white py-10">
+            <div
+                style={{ backgroundColor: bgColor }}
+                className="py-10 text-white"
+            >
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-2 gap-20">
                         <div className="space-y-5">
@@ -24,29 +27,38 @@ const AppFooter = () => {
                                 plataforma.
                             </p>
                             <div className="flex gap-4 ">
-                                <LinkedinIcon className="w-8 text-yellow-600" />
+                                {social_networks.map((socialNetwork) => (
+                                    <a
+                                        href={socialNetwork.url}
+                                        target="_blank"
+                                        key={socialNetwork.id}
+                                    >
+                                        <img
+                                            src={`/storage/${socialNetwork.social_network.icon}`}
+                                            className="w-10"
+                                        />
+                                    </a>
+                                ))}
+                                {/* <LinkedinIcon className="w-8 text-yellow-600" />
                                 <InstagramIcon className="w-8 text-yellow-600" />
-                                <TikTokIcon className="w-8 text-yellow-600" />
+                                <TikTokIcon className="w-8 text-yellow-600" /> */}
                                 <button
                                     type="button"
-                                    className="inline-flex items-center  border border-transparent bg-yellow-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    className="inline-flex items-center px-4 py-2 text-base font-medium text-white bg-yellow-600 border border-transparent shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                 >
                                     Button text
                                 </button>
                             </div>
                         </div>
-                        <div className="space-y-5 flex flex-col justify-center">
+                        <div className="flex flex-col justify-center space-y-5">
                             <p className="text-xl">Patrocinadores</p>
-
                             <div className="grid grid-cols-4 gap-x-12 gap-y-6">
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
-                                <FooterPartnersItem />
+                                {sponsors.map((sponsor) => (
+                                    <FooterPartnersItem
+                                        key={sponsor.id}
+                                        sponsor={sponsor}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -64,10 +76,10 @@ const AppFooter = () => {
 
 export default AppFooter;
 
-const FooterPartnersItem = () => {
+const FooterPartnersItem = ({ sponsor }) => {
     return (
-        <div className="flex items-center gap-4 bg-white w-full h-24">
-            <div></div>
-        </div>
+        <a href={sponsor.url} className="w-24 h-24 ">
+            <img src={`/storage/${sponsor.image}`} alt={sponsor.name} />
+        </a>
     );
 };

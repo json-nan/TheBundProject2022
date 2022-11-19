@@ -1,17 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import {
-    ArrowPathIcon,
-    Bars3Icon,
-    ChartBarIcon,
-    CursorArrowRaysIcon,
-    DocumentChartBarIcon,
-    ShieldCheckIcon,
-    Squares2X2Icon,
-    XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import HomeMenuDropdown from "./HomeMenuDropdown";
+import { TBPIcon } from "./svg/TBPIcon";
 
 const menuItems = [
     {
@@ -75,8 +67,25 @@ function classNames(...classes) {
 }
 
 export default function AppHeader({ generations }) {
+    const [isSticky, setIsSticky] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+        const cachedRef = ref.current,
+            observer = new IntersectionObserver(
+                ([e]) => setIsSticky(e.intersectionRatio < 1),
+                { threshold: [1], rootMargin: "-1px 0px 0px 0px" }
+            );
+
+        observer.observe(cachedRef);
+
+        return function () {
+            observer.unobserve(cachedRef);
+        };
+    }, []);
+
     return (
-        <Popover className="relative bg-white">
+        <Popover className="sticky top-0 z-20 bg-white" ref={ref}>
             <div className="flex items-center justify-between px-4 py-2 sm:px-6 md:justify-start">
                 <div className="-my-2 -mr-2 md:hidden">
                     <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -128,7 +137,11 @@ export default function AppHeader({ generations }) {
                                                                 </p>
                                                             </div>
                                                         </a>
-                                                        <HomeMenuDropdown generations={generations} />
+                                                        <HomeMenuDropdown
+                                                            generations={
+                                                                generations
+                                                            }
+                                                        />
                                                         <a
                                                             href={"#news"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50"
@@ -140,27 +153,27 @@ export default function AppHeader({ generations }) {
                                                             </div>
                                                         </a>
                                                         {/* <a
-                                                            href={"/connections"}
-                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
-                                                        >
-                                                            <div className="ml-4">
-                                                                <p className="text-base font-medium text-gray-900">
-                                                                    Catalogo de
-                                                                    nexos
-                                                                </p>
-                                                            </div>
-                                                        </a>
-                                                        <a
-                                                            href={"/emblematic-members"}
-                                                            className="flex items-start p-2 -m-3 hover:bg-gray-50"
-                                                        >
-                                                            <div className="ml-4">
-                                                                <p className="text-base font-medium text-gray-900">
-                                                                    Diseñadores
-                                                                    emblema
-                                                                </p>
-                                                            </div>
-                                                        </a> */}
+                                                        href={"/connections"}
+                                                        className="flex items-start p-2 -m-3 hover:bg-gray-50"
+                                                    >
+                                                        <div className="ml-4">
+                                                            <p className="text-base font-medium text-gray-900">
+                                                                Catalogo de
+                                                                nexos
+                                                            </p>
+                                                        </div>
+                                                    </a>
+                                                    <a
+                                                        href={"/emblematic-members"}
+                                                        className="flex items-start p-2 -m-3 hover:bg-gray-50"
+                                                    >
+                                                        <div className="ml-4">
+                                                            <p className="text-base font-medium text-gray-900">
+                                                                Diseñadores
+                                                                emblema
+                                                            </p>
+                                                        </div>
+                                                    </a> */}
                                                     </div>
                                                 </div>
                                             </Popover.Panel>
@@ -169,18 +182,23 @@ export default function AppHeader({ generations }) {
                                 )}
                             </Popover>
                         </Popover.Group>
-                        <div className="flex items-center justify-center">
-                            <img
-                                className="w-64"
-                                src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOPRINCIPAL_Mesa de trabajo 1.svg"
-                                alt=""
-                            />
+                        <a href="/" className="flex items-center justify-center">
+                            {isSticky ? (
+                                <TBPIcon className="w-12 text-[#F0A31F]" />
+                            ) : (
+                                <img
+                                    className="w-64"
+                                    src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOPRINCIPAL_Mesa de trabajo 1.svg"
+                                    alt=""
+                                />
+                            )}
+
                             {/* <img
-                                className="w-auto h-8 sm:h-10"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
-                            /> */}
-                        </div>
+                            className="w-auto h-8 sm:h-10"
+                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                            alt=""
+                        /> */}
+                        </a>
                         <div className="flex items-center md:ml-12"></div>
                     </div>
                 </div>
@@ -224,22 +242,22 @@ export default function AppHeader({ generations }) {
                             <div className="mt-6">
                                 <nav className="grid gap-6">
                                     {/* {menuItems.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50"
-                                        >
-                                            <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white bg-indigo-500 rounded-md">
-                                                <item.icon
-                                                    className="w-6 h-6"
-                                                    aria-hidden="true"
-                                                />
-                                            </div>
-                                            <div className="ml-4 text-base font-medium text-gray-900">
-                                                {item.name}
-                                            </div>
-                                        </a>
-                                    ))} */}
+                                    <a
+                                        key={item.name}
+                                        href={item.href}
+                                        className="flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50"
+                                    >
+                                        <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white bg-indigo-500 rounded-md">
+                                            <item.icon
+                                                className="w-6 h-6"
+                                                aria-hidden="true"
+                                            />
+                                        </div>
+                                        <div className="ml-4 text-base font-medium text-gray-900">
+                                            {item.name}
+                                        </div>
+                                    </a>
+                                ))} */}
                                 </nav>
                             </div>
                         </div>

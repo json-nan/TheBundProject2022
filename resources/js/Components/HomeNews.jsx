@@ -72,7 +72,7 @@ const NoticeModal = ({ notice, open, onClose }) => {
     return (
         <Modal open={open} onClose={onClose} bgColor="#F0A31F">
             <div className="flex flex-col p-6">
-                <div className="w-full h-96">
+                <div className="w-full max-h-96">
                     <img src={`/storage/${notice?.image}`} alt="" />
                 </div>
                 <div className="p-2">
@@ -80,15 +80,16 @@ const NoticeModal = ({ notice, open, onClose }) => {
                         <p className="text-xl font-bold text-primary">
                             {notice?.title}
                         </p>
-                        <a
-                            target="_blank"
-                            href={notice?.external_link}
-                            className="text-sm underline font-bold text-[#F0A31F]"
-                        >
-                            Link de referencia
-                        </a>
                     </div>
-                    <p className="text-primary">{notice?.content}</p>
+                    <div className="-mt-4">
+                        {notice?.content.split("\n").map((paragraph) => (
+                            <>
+                                <br />
+                                <p>{paragraph}</p>
+                            </>
+                        ))}
+                    </div>
+                    <p className="text-primary">{}</p>
                 </div>
             </div>
         </Modal>

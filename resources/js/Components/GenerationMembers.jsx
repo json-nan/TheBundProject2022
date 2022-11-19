@@ -4,7 +4,7 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
 
 const GenerationMembers = (props) => {
-    const { generation } = props;
+    const { generation, sponsors } = props;
     const [open, setOpen] = useState(false);
     const [member, setMember] = useState(null);
     const onMemberOpen = (member) => {
@@ -19,7 +19,7 @@ const GenerationMembers = (props) => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
-            className="py-10 generation-members"
+            className="pt-10 generation-members"
         >
             <div className="max-w-2xl mx-auto space-y-10 2xl:max-w-7xl lg:max-w-4xl">
                 <div className="flex justify-center">
@@ -37,6 +37,27 @@ const GenerationMembers = (props) => {
                         />
                     ))}
                 </div>
+            </div>
+            <div
+                className="flex items-center justify-center h-20 mt-10 bg-white"
+                style={{ backgroundColor: generation.background_color }}
+            >
+                <img
+                    src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOUDB_Mesa de trabajo 1.svg"
+                    className="h-full"
+                />
+                {sponsors.map((sponsor, index) => (
+                    <img
+                        key={sponsor.id}
+                        src={`/storage/${sponsor.image}`}
+                        className="w-20 h-20"
+                    />
+                ))}
+                {/* {generation.phrase} */}
+            </div>
+            <div className="flex items-center justify-center h-20 bg-white">
+                {/* <p>Hello world</p> */}
+                <p>{generation.phrase}</p>
             </div>
             <MemberModal
                 open={open}

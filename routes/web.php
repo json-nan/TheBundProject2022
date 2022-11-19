@@ -4,6 +4,8 @@ use App\Models\Connection;
 use App\Models\EmblematicMember;
 use App\Models\Generation;
 use App\Models\Notice;
+use App\Models\ProjectSocialNetwork;
+use App\Models\Sponsor;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +27,8 @@ Route::get('/', function () {
         'generations' => Generation::all(),
         'members' => Generation::isHomePageGeneration()->first()->members,
         'news' => Notice::published()->latest()->take(4)->get(),
+        'sponsors' => Sponsor::all(),
+        'social_networks' => ProjectSocialNetwork::with('socialNetwork')->get(),
     ]);
 });
 
@@ -32,6 +36,8 @@ Route::get('/generations/{generation:slug}', function (Generation $generation) {
     return Inertia::render('Generation', [
         'generations' => Generation::all(),
         'generation' => $generation->load('members.socialNetworks'),
+        'sponsors' => Sponsor::all(),
+        'social_networks' => ProjectSocialNetwork::with('socialNetwork')->get()
     ]);
 })->name('generation');
 

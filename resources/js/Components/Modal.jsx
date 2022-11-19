@@ -10,7 +10,7 @@ export const Modal = ({
 }) => {
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={onClose}>
+            <Dialog as="div" className="relative z-30" onClose={onClose}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -27,7 +27,7 @@ export const Modal = ({
                                 bgOpacity / 100
                             ),
                         }}
-                        className={`fixed inset-0 transition-opacity`}
+                        className={`fixed inset-0 transition-opacity `}
                     />
                 </Transition.Child>
 
@@ -42,7 +42,7 @@ export const Modal = ({
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-xl sm:p-6">
+                            <Dialog.Panel className="relative z-50 px-4 pt-5 pb-4 my-10 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-xl sm:p-6 ">
                                 {children}
                             </Dialog.Panel>
                         </Transition.Child>
