@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscribeController;
 use App\Models\Connection;
 use App\Models\EmblematicMember;
 use App\Models\Generation;
@@ -41,6 +42,7 @@ Route::get('/generations/{generation:slug}', function (Generation $generation) {
     ]);
 })->name('generation');
 
+Route::post('/subscribe', SubscribeController::class)->name('subscriber.store');
 // Route::get('/connections', function () {
 //     return Inertia::render('Connections', [
 //         'generations' => Generation::all(),

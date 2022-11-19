@@ -9,9 +9,9 @@ function classNames(...classes) {
 
 export default function HomeMenuDropdown({ generations }) {
     return (
-        <Menu as="div" className="relative -m-3 flex items-start">
+        <Menu as="div" className="relative flex items-start -m-3">
             <div className="w-full">
-                <Menu.Button className="flex justify-between w-full bg-white px-4 text-sm font-medium  hover:bg-gray-50 items-center">
+                <Menu.Button className="flex items-center justify-between w-full px-4 text-sm font-medium bg-white hover:bg-gray-50">
                     <div className="flex items-start p-2 hover:bg-gray-50">
                         <div className="">
                             <p className="text-base font-medium text-gray-900">
@@ -48,10 +48,10 @@ export default function HomeMenuDropdown({ generations }) {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute -right-60 z-10 -mt-0 w-56 origin-top-right divide-y divide-gray-100 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute z-10 w-56 -mt-0 origin-top-right bg-white divide-y divide-gray-100 shadow-lg -right-60 ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                         {generations.map((generation) => (
-                            <Menu.Item>
+                            <Menu.Item key={generation.id}>
                                 {({ active }) => (
                                     <a
                                         href={`/generations/${generation.slug}`}

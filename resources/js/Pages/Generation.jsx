@@ -4,6 +4,7 @@ import AppHeader from "@/Components/AppHeader";
 import BannerVideo from "@/Components/BannerVideo";
 import GenerationMembers from "@/Components/GenerationMembers";
 import AppFooter from "@/Components/AppFooter";
+import Banner from "@/Components/Banner";
 
 const Welcome = (props) => {
     const { generations, generation, sponsors, social_networks } = props;
@@ -12,7 +13,8 @@ const Welcome = (props) => {
             <Head title="Welcome" />
             <AppHeader generations={generations} />
             <div className="space-y-10">
-                <BannerVideo />
+                <Banner banner_img={generation.banner_image} />
+                {/* <BannerVideo /> */}
                 <GenerationMembers
                     generation={generation}
                     sponsors={sponsors}

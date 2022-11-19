@@ -10,14 +10,14 @@ const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
                 className="py-10 text-white"
             >
                 <div className="max-w-5xl mx-auto">
-                    <div className="grid grid-cols-1 gap-20 lg:grid-cols-2">
-                        <div className="flex flex-col items-center justify-center space-y-5">
+                    <div className="grid grid-cols-1 gap-5 lg:gap-20 lg:grid-cols-2">
+                        <div className="flex flex-col items-center justify-center space-y-5 lg:items-start lg:justify-start">
                             <img
                                 className="w-64"
                                 src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOTBP BLANCO_Mesa de trabajo 1.svg"
                                 alt=""
                             />
-                            <p className="text-center">
+                            <p className="text-center lg:text-left">
                                 The Bünd Project es un colectivo creativo que
                                 engloba generaciones de diseñadores
                                 industriales, con el objetivo de mostrar su
@@ -27,7 +27,7 @@ const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
                                 plataforma.
                             </p>
                             <div className="flex flex-col gap-4 lg:flex-row ">
-                                <div className="flex gap-2 ">
+                                <div className="flex justify-center gap-2">
                                     {social_networks.map((socialNetwork) => (
                                         <a
                                             href={socialNetwork.url}
@@ -41,12 +41,6 @@ const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
                                         </a>
                                     ))}
                                 </div>
-                                <button
-                                    type="button"
-                                    className="inline-flex items-center px-4 py-2 text-base font-medium text-white bg-yellow-600 border border-transparent shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                >
-                                    Button text
-                                </button>
                             </div>
                         </div>
                         <div className="flex flex-col justify-center space-y-5">

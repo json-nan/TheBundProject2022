@@ -28,7 +28,7 @@ const GenerationMembers = (props) => {
                         className="max-h-28"
                     />
                 </div>
-                <div className="grid grid-cols-4 gap-10">
+                <div className="grid grid-cols-2 gap-10 mx-4 lg:grid-cols-6">
                     {generation.members.map((member, index) => (
                         <Member
                             key={index}
@@ -39,12 +39,12 @@ const GenerationMembers = (props) => {
                 </div>
             </div>
             <div
-                className="flex items-center justify-center h-20 mt-10 bg-white"
+                className="flex flex-wrap items-center content-center justify-center mt-10 bg-white place-content-center justify-items-center "
                 style={{ backgroundColor: generation.background_color }}
             >
                 <img
                     src="/assets/images/THEBUNDPROJECT-NEXOS2022-LOGOUDB_Mesa de trabajo 1.svg"
-                    className="h-full"
+                    className="w-20 h-20"
                 />
                 {sponsors.map((sponsor, index) => (
                     <img
@@ -94,7 +94,7 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
             bgColor={bgColor}
             bgOpacity={bgOpacity}
         >
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
                 <div className="col-span-3">
                     <img src={`/storage/${member?.profile_image}`} />
                 </div>
@@ -106,7 +106,7 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                         />
                     </div>
                     <div className="h-32 overflow-y-auto">
-                        <p className="text-sm text-primary">
+                        <p className="text-sm text-center text-primary lg:text-left">
                             {member?.description}
                         </p>
                     </div>

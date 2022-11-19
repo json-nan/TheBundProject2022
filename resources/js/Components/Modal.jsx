@@ -5,8 +5,9 @@ export const Modal = ({
     open,
     onClose,
     children,
-    bgColor = "gray-500",
+    bgColor = "#6b7280",
     bgOpacity = 75,
+    panelBgColor = "#ffffff",
 }) => {
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -42,7 +43,10 @@ export const Modal = ({
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative z-50 px-4 pt-5 pb-4 my-10 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-xl sm:p-6 ">
+                            <Dialog.Panel
+                                style={{ backgroundColor: panelBgColor }}
+                                className="relative z-50 px-4 pt-5 pb-4 my-10 overflow-hidden text-left transition-all transform rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-xl sm:p-6 "
+                            >
                                 {children}
                             </Dialog.Panel>
                         </Transition.Child>
