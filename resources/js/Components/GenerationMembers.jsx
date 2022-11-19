@@ -105,7 +105,7 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                             className="h-44"
                         />
                     </div>
-                    <div className="flex-1 overflow-y-auto">
+                    <div className="h-32 overflow-y-auto">
                         <p className="text-sm text-primary">
                             {member?.description}
                         </p>
