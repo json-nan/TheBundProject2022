@@ -8,7 +8,11 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function AppHeader({ generations }) {
+export default function AppHeader({
+    generations,
+    social_networks,
+    openSubscriberModal,
+}) {
     const [isSticky, setIsSticky] = useState(false);
     const ref = useRef();
 
@@ -68,6 +72,37 @@ export default function AppHeader({ generations }) {
                                             <Popover.Panel className="absolute z-10 w-screen max-w-md mt-2 -ml-6 transform ">
                                                 <div className="shadow-lg ">
                                                     <div className="relative grid gap-6 px-5 py-6 bg-white divide-y-4 divide-gray-200 sm:gap-6 sm:p-8 lg:grid-cols-1">
+                                                        <div className="flex gap-2">
+                                                            <button
+                                                                onClick={
+                                                                    openSubscriberModal
+                                                                }
+                                                                type="button"
+                                                                className="px-2 py-1 text-white bg-[#F0A31F] border border-transparent shadow-sm tems-center hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                            >
+                                                                Suscríbete
+                                                            </button>
+                                                            {social_networks.map(
+                                                                (
+                                                                    socialNetwork
+                                                                ) => (
+                                                                    <a
+                                                                        href={
+                                                                            socialNetwork.url
+                                                                        }
+                                                                        target="_blank"
+                                                                        key={
+                                                                            socialNetwork.id
+                                                                        }
+                                                                    >
+                                                                        <img
+                                                                            src={`/storage/${socialNetwork.social_network.icon}`}
+                                                                            className="w-8"
+                                                                        />
+                                                                    </a>
+                                                                )
+                                                            )}
+                                                        </div>
                                                         <a
                                                             href={"/"}
                                                             className="flex items-start p-2 -m-3 hover:bg-gray-50 group"
