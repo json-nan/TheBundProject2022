@@ -99,10 +99,10 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                     <img src={`/storage/${member?.profile_image}`} />
                 </div>
                 <div className="flex flex-col col-span-2 space-y-2">
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center h-44">
                         <img
                             src={`/storage/${member?.logo_image}`}
-                            className="h-44"
+                            className="w-full"
                         />
                     </div>
                     <div className="h-32 overflow-y-auto">
