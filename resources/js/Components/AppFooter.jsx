@@ -2,7 +2,12 @@ import InstagramIcon from "@/icons/InstagramIcon";
 import LinkedinIcon from "@/icons/LinkedinIcon";
 import TikTokIcon from "@/icons/TikTokIcon";
 
-const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
+const AppFooter = ({
+    bgColor = "#000",
+    sponsors,
+    social_networks,
+    openSubscriberModal,
+}) => {
     return (
         <footer>
             <div
@@ -40,6 +45,13 @@ const AppFooter = ({ bgColor = "#000", sponsors, social_networks }) => {
                                             />
                                         </a>
                                     ))}
+                                    <button
+                                        onClick={openSubscriberModal}
+                                        type="button"
+                                        className="px-2 py-1 text-white bg-[#F0A31F] border border-transparent shadow-sm tems-center hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    >
+                                        Suscríbete
+                                    </button>
                                 </div>
                             </div>
                         </div>
