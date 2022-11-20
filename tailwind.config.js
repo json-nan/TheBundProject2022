@@ -14,6 +14,7 @@ module.exports = {
             fontFamily: {
                 sans: ["Gilroy", "Nunito", ...defaultTheme.fontFamily.sans],
                 gilroy: ["Gilroy"],
+                poppins: ["Poppins"],
             },
             colors: {
                 primary: "#383391",

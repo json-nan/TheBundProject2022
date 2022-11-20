@@ -25,6 +25,26 @@ svg {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url("/assets/fonts/Poppins/Poppins-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 800;
+    src: url("/assets/fonts/Poppins/Poppins-Bold.ttf");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    font-weight: 900;
+    src: url("/assets/fonts/Poppins/Poppins-ExtraBold.ttf");
+    font-style: normal;
+}
+
 /* @font-face {
 	font-family: 'Gilroy';
 	src: url('../assets/Museo-Sans/MuseoSans_300.otf');
@@ -35,4 +55,8 @@ svg {
 * {
     font-family: Gilroy;
     scroll-behavior: smooth;
+}
+
+a {
+    @apply focus:ring-offset-0 focus:ring-0 focus:outline-none;
 }
