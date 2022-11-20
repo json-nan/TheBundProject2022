@@ -2,28 +2,28 @@ const HomeMainGenerationGrid = ({ members }) => (
     <div className="relative overflow-hidden home-generation bg-primary">
         <img
             src="/assets/images/THEBUNDPROJECT-NEXOS2022-TRAMA_Mesa de trabajo 1.svg"
-            className="absolute bottom-0 2xl:w-96 w-72 lg:w-56"
+            className="absolute bottom-0 w-16 lg:w-56 2xl:w-96"
         />
         <img
             src="/assets/images/THEBUNDPROJECT-NEXOS2022-TRAMA2_Mesa de trabajo 1.svg"
-            className="absolute w-32 2xl:w-44 top-8 right-12 lg:w-24 "
+            className="absolute w-24 lg:w-24 2xl:w-44 top-8 right-4 lg:right-12 "
         />
         <img
             src="/assets/images/THEBUNDPROJECT-NEXOS2022-TRAMA3_Mesa de trabajo 1.svg"
-            className="absolute bottom-0 right-0 2xl:w-96 w-72 2xl:bottom-16 lg:w-60 lg:bottom-20"
+            className="absolute bottom-0 right-0 w-40 lg:w-60 2xl:w-96 2xl:bottom-16 lg:bottom-20"
         />
 
         <div className="relative top-0 z-10 w-full px-6 py-10 lg:px-0">
             <div className="max-w-2xl mx-auto space-y-10 2xl:max-w-7xl lg:max-w-4xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className="flex items-center justify-center col-span-1">
+                    <div className="flex justify-center col-span-1 -mt-3">
                         <img
-                            className="w-2/3"
+                            className="h-28"
                             src="/assets/images/THEBUNDPROJECT-NEXOS2022-FONDOBLANCO ID_Mesa de trabajo 1.svg"
                         />
                     </div>
                     <div className="col-span-1">
-                        <p className="text-white">
+                        <p className="text-white font-poppins">
                             Nuestra unión y conexión de mentes creativas
                             reunidad para formar parte de un colectivo que
                             buscan formar nexos y experiencias para el
