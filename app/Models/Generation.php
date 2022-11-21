@@ -20,6 +20,7 @@ class Generation extends Model
         'background_color_opacity',
         'background_image',
         'home_page_generation',
+        'phrase',
     ];
 
     public function members()
