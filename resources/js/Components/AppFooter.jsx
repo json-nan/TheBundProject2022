@@ -71,7 +71,7 @@ const AppFooter = ({
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center py-4 text-center">
+            <div className="flex justify-center py-4 text-sm text-center text-gray-500">
                 <p>
                     Copyright © 2010 - 2022 The Bünd Project. Todos los derechos
                     reservados.
