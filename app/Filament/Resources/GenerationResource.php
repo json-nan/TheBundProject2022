@@ -62,8 +62,12 @@ class GenerationResource extends Resource
                     ->required()
                     ->disablePreview()
                     ->directory('generations'),
+                Forms\Components\TextInput::make('phrase')
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\Toggle::make('home_page_generation')
                     ->required(),
+
 
             ]);
     }

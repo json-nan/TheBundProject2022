@@ -27,7 +27,7 @@ const Welcome = ({ members, generations, news, sponsors, social_networks }) => {
                 social_networks={social_networks}
                 sponsors={sponsors}
             >
-                <div className="space-y-10">
+                <div className="mb-10 space-y-10">
                     <BannerVideo />
                     <HomeMainGenerationGrid members={members} />
                     <HomeNews news={news} />

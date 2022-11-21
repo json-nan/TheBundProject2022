@@ -28,7 +28,7 @@ const GenerationMembers = (props) => {
                         className="max-h-28"
                     />
                 </div>
-                <div className="grid grid-cols-2 gap-10 mx-4 lg:grid-cols-6">
+                <div className="grid grid-cols-2 gap-10 mx-4 lg:grid-cols-5">
                     {generation.members.map((member, index) => (
                         <Member
                             key={index}
@@ -99,7 +99,7 @@ const MemberModal = ({ member, open, onClose, bgColor, bgOpacity }) => {
                     <img src={`/storage/${member?.profile_image}`} />
                 </div>
                 <div className="flex flex-col col-span-2 space-y-2">
-                    <div className="flex items-center justify-center h-44">
+                    <div className="flex items-center justify-center p-4 h-44">
                         <img
                             src={`/storage/${member?.logo_image}`}
                             className="w-full"

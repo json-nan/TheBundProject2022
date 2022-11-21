@@ -21,7 +21,7 @@ export const AppLayout = ({
                 social_networks={social_networks}
                 openSubscriberModal={() => setOpen(true)}
             />
-            <main className="mb-10">{children}</main>
+            <main className="">{children}</main>
             <AppFooter
                 sponsors={sponsors}
                 social_networks={social_networks}
