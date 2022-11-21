@@ -13,6 +13,7 @@ export const AppLayout = ({
     setOpen,
     openSuccesfully,
     setOpenSuccesfully,
+    footerBgColor,
 }) => {
     return (
         <>
@@ -26,6 +27,7 @@ export const AppLayout = ({
                 sponsors={sponsors}
                 social_networks={social_networks}
                 openSubscriberModal={() => setOpen(true)}
+                bgColor={footerBgColor}
             />
 
             <SubscriberModal
