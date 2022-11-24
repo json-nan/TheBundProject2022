@@ -33,7 +33,7 @@ export default function AppHeader({
     return (
         <Popover className="sticky top-0 z-20 py-2 bg-white lg:py-0" ref={ref}>
             <div className="relative flex items-center justify-between py-2 sm:px-6 md:justify-start">
-                <div className="absolute z-10 flex justify-center w-full py-1">
+                <div className="absolute z-10 flex justify-center w-full py-1 md:hidden">
                     <TBPIcon className="w-10 text-[#F0A31F] " />
                 </div>
                 <div className="z-20 -my-2 -mr-2 md:hidden">
