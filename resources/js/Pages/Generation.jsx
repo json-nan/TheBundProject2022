@@ -24,7 +24,7 @@ const Welcome = (props) => {
                 sponsors={sponsors}
                 footerBgColor={generation.background_color}
             >
-                <div className="space-y-10">
+                <div className="space-y-5 lg:space-y-10">
                     <Banner banner_img={generation.banner_image} />
                     {/* <BannerVideo /> */}
                     <GenerationMembers

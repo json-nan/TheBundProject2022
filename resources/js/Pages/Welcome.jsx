@@ -27,7 +27,7 @@ const Welcome = ({ members, generations, news, sponsors, social_networks }) => {
                 social_networks={social_networks}
                 sponsors={sponsors}
             >
-                <div className="mb-10 space-y-10">
+                <div className="mb-10 space-y-5 lg:space-y-10">
                     <BannerVideo />
                     <HomeMainGenerationGrid members={members} />
                     <HomeNews news={news} />
@@ -55,8 +55,8 @@ const HomePageHeader = ({ social_networks, openSubscriberModal }) => {
                 <div className="col-span-1 lg:col-span-3">
                     <div className="flex items-center justify-center h-full text-center">
                         <p>
-                            Mentes creativas reunidad para formar parte de un
-                            colectivo nuevo e innovador
+                            Mentes creativas reunidas para formar parte de un
+                            movimiento nuevo e innovador
                         </p>
                     </div>
                 </div>

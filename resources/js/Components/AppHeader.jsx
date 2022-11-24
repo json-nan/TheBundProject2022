@@ -31,9 +31,12 @@ export default function AppHeader({
     }, []);
 
     return (
-        <Popover className="sticky top-0 z-20 bg-white" ref={ref}>
-            <div className="flex items-center justify-between px-4 py-2 sm:px-6 md:justify-start">
-                <div className="-my-2 -mr-2 md:hidden">
+        <Popover className="sticky top-0 z-20 py-2 bg-white lg:py-0" ref={ref}>
+            <div className="relative flex items-center justify-between py-2 sm:px-6 md:justify-start">
+                <div className="absolute z-10 flex justify-center w-full py-1">
+                    <TBPIcon className="w-10 text-[#F0A31F] " />
+                </div>
+                <div className="z-20 -my-2 -mr-2 md:hidden">
                     <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500">
                         <span className="sr-only">Open menu</span>
                         <Bars3Icon className="w-6 h-6" aria-hidden="true" />
@@ -227,22 +230,16 @@ export default function AppHeader({
                     className="absolute top-0 left-0 p-2 transition origin-top-right transform md:hidden"
                 >
                     <div className="bg-white divide-y-2 rounded-lg shadow-lg divide-gray-50 ring-1 ring-black ring-opacity-5">
-                        <div className="px-5 pt-5 pb-6">
+                        <div className="px-5 pt-5 ">
                             <div className="flex items-center justify-between">
-                                <div className="-mr-2">
+                                <div className="-mr-5">
                                     <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                         <span className="sr-only">
                                             Close menu
                                         </span>
-                                        <XMarkIcon
-                                            className="w-6 h-6"
-                                            aria-hidden="true"
-                                        />
+                                        
                                     </Popover.Button>
                                 </div>
-                            </div>
-                            <div className="mt-6">
-                                <nav className="grid gap-6"></nav>
                             </div>
                         </div>
                         <div className="px-5 py-6">

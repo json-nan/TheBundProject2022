@@ -25,7 +25,7 @@ const HomeMainGenerationGrid = ({ members }) => (
                     <div className="col-span-1">
                         <p className="text-white font-poppins">
                             Nuestra unión y conexión de mentes creativas
-                            reunidad para formar parte de un colectivo que
+                            reunidas para formar parte de un movimiento que
                             buscan formar nexos y experiencias para el
                             desarrollo e innovación de la industria creativa en
                             El Salvador.

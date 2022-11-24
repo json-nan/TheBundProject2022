@@ -23,7 +23,7 @@ const AppFooter = ({
                                 alt=""
                             />
                             <p className="text-center lg:text-left">
-                                The Bünd Project es un colectivo creativo que
+                                The Bünd Project es un movimiento creativo que
                                 engloba generaciones de diseñadores
                                 industriales, con el objetivo de mostrar su
                                 trabajo y competencias a diferentes empresas o
