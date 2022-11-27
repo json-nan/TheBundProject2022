@@ -58,7 +58,7 @@ const HomeNewsItem = ({ notice, onNoticeOpen }) => {
             className="w-full bg-white cursor-pointer member"
             onClick={() => onNoticeOpen(notice)}
         >
-            <div className="overflow-hidden h-52">
+            <div className="overflow-hidden h-30">
                 <img src={`/storage/${notice.image}`} alt="" />
             </div>
             <div className="p-2">
